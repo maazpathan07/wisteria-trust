@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="badge.png">
+    <title>Seller Verification Details | Wisteria Trust</title>
+    <link rel="stylesheet" href="seller.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="luxury-theme">
+    <div class="grain-overlay"></div>
+    
+    <main class="seller-container">
+        <!-- Header -->
+        <header class="seller-header">
+            <div class="header-content">
+                <a href="../index.html" class="back-home-link">
+                    <i data-lucide="arrow-left"></i> Wisteria Trust Registry
+                </a>
+                <p class="eyebrow">Institutional Verification Protocol</p>
+                <h1 class="premium-heading">Seller <br><span>Verification Report</span></h1>
+                <p class="subtitle">Official authentication record for the registered sovereign entity in the Wisteria Trust global trust ledger.</p>
+            </div>
+        </header>
+
+        <!-- Dynamic Status Alert Banner (Shown for Revoked or Expired verifications) -->
+        <div id="statusNotice" class="status-alert-banner" style="display: none;"></div>
+
+        <!-- Verification Profile Card -->
+        <section class="verification-profile">
+            <div class="profile-card glass-morphism">
+                <div class="card-glow"></div>
+                <div class="profile-header">
+                    <div class="verification-badge" id="badgeShieldContainer">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L3 7V12C3 17.5 7 22 12 24C17 22 21 17.5 21 12V7L12 2Z" fill="url(#gold-grad)"/>
+                            <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="gold-grad" x1="3" y1="2" x2="21" y2="24" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#c5a059"/>
+                                    <stop offset="1" stop-color="#8e6d2f"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="profile-title">
+                        <h2 id="businessName">Loading Business...</h2>
+                        <p id="vid">Verification ID: —</p>
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Legal Entity</span>
+                        <span class="value" id="sellerName">—</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Verification Status</span>
+                        <span class="value status-active" id="status">Verifying...</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Jurisdiction / City</span>
+                        <span class="value" id="city">—</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Validity Period</span>
+                        <span class="value" id="validTill">—</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Registered On</span>
+                        <span class="value" id="issuedDate">—</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Official Website</span>
+                        <span class="value" id="websiteValue">—</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Integration Assets -->
+        <section class="trust-assets">
+            <div class="asset-grid">
+                <!-- Live Dynamic Trust Seal (SVG) -->
+                <div class="asset-card glass-morphism">
+                    <div class="asset-tag">RECOMMENDED INTEGRATION</div>
+                    <h3>Live Dynamic Trust Seal</h3>
+                    <p class="asset-description">
+                        Embed this real-time dynamic SVG seal in your website's header, footer, or checkout. It automatically reflects your real-time verified status directly from Wisteria Trust.
+                    </p>
+                    
+                    <div class="live-badge-preview">
+                        <label class="preview-label">Live Preview</label>
+                        <div class="svg-preview-box">
+                            <img id="liveSvgBadgeImg" src="badge.png" alt="Live Trust Badge" class="live-svg-img">
+                        </div>
+                    </div>
+
+                    <div class="action-block">
+                        <label>Dynamic SVG Embed Code (HTML)</label>
+                        <p class="instruction-text">Copy and paste into your website's HTML:</p>
+                        <div class="code-box">
+                            <pre id="embedCode">Processing...</pre>
+                        </div>
+                        <button id="copyCode" class="pill-button secondary">
+                            <span>Copy Embed Code</span>
+                        </button>
+                    </div>
+
+                    <div class="action-block">
+                        <label>Public Verification Link</label>
+                        <p class="instruction-text">Direct URL to your official legitimacy certificate:</p>
+                        <div class="code-box">
+                            <code id="verifyLink">Generating...</code>
+                        </div>
+                        <button id="copyLink" class="pill-button secondary">
+                            <span>Copy Verification Link</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Static Official Asset Download -->
+                <div class="asset-card glass-morphism dark-accent">
+                    <div class="card-pattern"></div>
+                    <h3>Official Vector Badge</h3>
+                    <p class="asset-description">Official digital trust asset for print, social media marketing, and media kits.</p>
+                    
+                    <div class="badge-preview-container">
+                        <img src="badge.png" alt="Wisteria Trust Verified Seller Badge" class="badge-preview-img">
+                    </div>
+
+                    <div class="action-block">
+                        <a href="badge.png" download="wisteria-verified-badge.png" class="pill-button primary shimmer">
+                            <span>Download Badge (PNG)</span>
+                        </a>
+                    </div>
+                    
+                    <div class="mandate-section">
+                        <label>Institutional Mandate</label>
+                        <ul class="mandate-list">
+                            <li><span>•</span> Identity Authenticity Forensic Check</li>
+                            <li><span>•</span> Immutable Public Ledger Registry</li>
+                            <li><span>•</span> Continuous Security & Compliance Audit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="luxury-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Wisteria Trust. Independent Seller Verification Authority. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="seller.js"></script>
+    <script>
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

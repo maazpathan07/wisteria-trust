@@ -1,0 +1,1727 @@
+/* =====================================================
+   WISTERIA TRUST LUXURY DESIGN SYSTEM
+===================================================== */
+:root {
+  /* Updated default theme to Light Mode with soft neutrals per mentor feedback */
+  /* Soft Light Theme (Now Default) */
+  --bg-main: #fcfbf9; /* Warm off-white */
+  --bg-surface: #ffffff;
+  --bg-elevated: #f7f4f0;
+  --primary: #b48a1d; /* Trust-based gold */
+  --primary-glow: rgba(180, 138, 29, 0.15);
+  --text-main: #2d3136; /* Soft charcoal, not pure black */
+  --text-muted: #64748b;
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --nav-bg: rgba(252, 251, 249, 0.9);
+  --gradient-start: rgba(180, 138, 29, 0.05);
+  --overlay-bg: rgba(252, 251, 249, 0.9);
+  --radius-xl: 32px;
+  --radius-lg: 20px;
+  --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Renamed dark class to be the toggleable one */
+body.dark-theme {
+  --bg-main: #0d0f12; /* Not pure black */
+  --bg-surface: #161a20;
+  --bg-elevated: #1f242d;
+  --primary: #d4af37;
+  --primary-glow: rgba(212, 175, 55, 0.25);
+  --text-main: #f1f5f9; /* Soft white */
+  --text-muted: #94a3b8;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --nav-bg: rgba(13, 15, 18, 0.9);
+  --gradient-start: #161b22;
+  --overlay-bg: rgba(13, 15, 18, 0.92);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Added global smooth scroll */
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Improved typography: neutral, professional, clean */
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.7; /* Improved line-height for readability */
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  /* Added a very subtle transition for theme switching and interactions */
+  transition: background-color 0.5s ease, color 0.5s ease;
+  background: radial-gradient(circle at 50% 0%, var(--gradient-start) 0%, var(--bg-main) 70%);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* TYPOGRAPHY */
+/* Refined Heading Typography */
+h1,
+h2,
+h3,
+.brand {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+h1 em {
+  font-style: italic;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section-tag {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 24px 0; /* Default padding */
+  transition: all 0.4s var(--ease-lux);
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.scrolled {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--nav-bg);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+/* added circle shape to logo mark */
+.logo-mark {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-weight: 800;
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Luxury Hover Effects */
+.nav-links a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  background: var(--primary);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  text-decoration: none;
+  background: var(--primary);
+  color: #000;
+  padding: 12px 24px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--primary-glow);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  border-radius: 4px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.light-theme .sun-icon,
+.dark-theme .moon-icon {
+  display: none;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 20px 80px; /* Added horizontal padding */
+  text-align: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(197, 160, 89, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 80% 80%, rgba(180, 138, 29, 0.04) 0%, transparent 50%);
+  z-index: -1;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(197, 160, 89, 0.1), transparent);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-label {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(197, 160, 89, 0.1);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 48px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.btn-primary {
+  padding: 20px 48px;
+  background: var(--primary);
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 100px; /* circle/pill shape */
+  transition: 0.3s;
+}
+
+.btn-secondary {
+  padding: 20px 48px;
+  background: transparent;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid var(--border-subtle);
+  border-radius: 100px; /* circle/pill shape */
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 64px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+/* MISSION SECTION */
+.mission {
+  padding: 180px 0;
+  background: var(--bg-surface);
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.mission-text h2 {
+  max-width: 500px;
+}
+
+.mission-text p {
+  font-size: 1.15rem;
+  margin-bottom: 48px;
+}
+
+.mission-features {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.m-feat {
+  display: flex;
+  gap: 24px;
+}
+
+.m-num {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: var(--primary);
+  opacity: 0.5;
+}
+
+.m-feat h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.m-feat p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.luxury-card {
+  position: relative;
+  padding: 40px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl); /* circle shape */
+}
+
+.luxury-card::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  border-top: 1px solid var(--primary);
+  border-right: 1px solid var(--primary);
+}
+
+.card-inner img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(1) contrast(1.2);
+  transition: 0.5s;
+}
+
+.card-inner:hover img {
+  filter: grayscale(0.5);
+}
+
+.luxury-visual-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(135deg, var(--bg-surface), var(--bg-elevated));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-line {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  opacity: 0.4;
+  animation: shimmer 3s infinite linear;
+}
+
+.logo-ghost {
+  font-family: "Playfair Display", serif;
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--primary);
+  opacity: 0.95;
+  position: absolute;
+  text-shadow: 0 0 30px rgba(197, 160, 89, 0.3);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* PORTAL SECTION */
+.portal {
+  padding: 150px 0;
+  background: var(--bg-main);
+  position: relative;
+}
+
+.portal-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl); /* circle shape */
+}
+
+.portal-card::after {
+  content: "WISTERIA";
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  font-size: 10rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+.portal-header h2 {
+  margin-bottom: 16px;
+}
+
+.portal-header p {
+  margin-bottom: 48px;
+}
+
+.verify-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.input-group {
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+/* Updated input text color to ensure visibility in light mode and redesigned report */
+.input-group input {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 20px 30px;
+  font-size: 1.1rem;
+  color: var(--text-main); /* Using variable for theme-based color */
+  font-family: inherit;
+  transition: all 0.4s var(--ease-lux);
+  border-radius: 100px;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(197, 160, 89, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.lookup-btn {
+  background: var(--primary);
+  border: none;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 100px; /* circle shape */
+}
+
+.lookup-btn:hover {
+  background: #d4b36b;
+  transform: translateY(-2px);
+}
+
+.lookup-result {
+  margin-top: 48px;
+}
+
+/* Added professional compact verification report styles */
+.verification-report {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 40px;
+  border-radius: 24px;
+  text-align: left;
+  max-width: 600px;
+  margin: 40px auto 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.report-seal {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-family: "Playfair Display", serif;
+  font-size: 5rem;
+  font-weight: 900;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.verified {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.status-badge.revoked {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.report-item label {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.report-item .value {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.report-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: var(--bg-elevated);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 576px) {
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Added project info and strategic detail section styles with premium animations */
+.project-info {
+  padding: 100px 0;
+  background: linear-gradient(to bottom, var(--bg-surface), var(--bg-main));
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
+
+.info-item {
+  padding: 40px;
+  border-left: 1px solid var(--primary);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.info-item h3 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.strategic-detail {
+  padding: 150px 0;
+  background: radial-gradient(circle at center, rgba(197, 160, 89, 0.06) 0%, transparent 70%), var(--bg-surface);
+  text-align: center;
+}
+
+.detail-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.detail-content p {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* VALUE CARDS */
+.value {
+  padding: 150px 0;
+}
+
+.centered {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.v-card {
+  padding: 60px 40px;
+  background: var(--bg-surface);
+  transition: all 0.6s var(--ease-lux);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg); /* circle shape */
+}
+
+.v-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--primary-glow);
+}
+
+/* FOOTER */
+footer {
+  padding: 150px 0 60px;
+  background: var(--bg-main);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Added a subtle luxury gold top border */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  opacity: 0.3;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 120px;
+  margin-bottom: 100px;
+}
+
+.footer-desc {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 32px 0;
+  font-size: 0.95rem;
+}
+
+.footer-certification {
+  margin-top: 40px;
+}
+
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: 100px;
+  font-size: 0.75rem;
+  color: var(--primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-links-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.f-col h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  margin-bottom: 40px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.f-col a {
+  display: block;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  transition: all 0.3s var(--ease-lux);
+  width: fit-content;
+}
+
+.f-col a:hover {
+  color: var(--primary);
+  transform: translateX(8px);
+}
+
+.social-links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.footer-cta {
+  display: inline-block;
+  padding: 12px 0;
+  color: var(--primary) !important;
+  font-weight: 700;
+  border-bottom: 1px solid var(--primary);
+}
+
+.footer-cta:hover {
+  letter-spacing: 1px;
+  transform: none !important;
+}
+
+.footer-bottom {
+  padding-top: 48px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.bottom-links {
+  display: flex;
+  gap: 32px;
+}
+
+.bottom-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.bottom-links a:hover {
+  color: var(--text-main);
+}
+
+/* MOBILE MENU OVERLAY STYLES */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-main);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s var(--ease-lux);
+  transform: translateY(-20px);
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: center;
+}
+
+.mobile-link {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: var(--text-main);
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: color 0.3s;
+}
+
+.mobile-link:hover {
+  color: var(--primary);
+}
+
+/* HAMBURGER BUTTON ANIMATION */
+.mobile-menu-toggle {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none; /* Desktop hidden */
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  z-index: 1001;
+}
+
+@media (max-width: 991px) {
+  .nav-links {
+    display: none; /* Hide desktop links on tablet/mobile */
+  }
+  .mobile-menu-toggle {
+    display: flex; /* Show toggle on mobile/tablet */
+  }
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text-main);
+  transition: all 0.3s;
+}
+
+.mobile-menu-toggle.menu-open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-toggle.menu-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.menu-open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* =====================================================
+   MOBILE RESPONSIVENESS & PREMIUM POLISH
+*/
+/* Refined circle UI for all buttons and interactive cards */
+.btn-primary,
+.btn-secondary,
+.nav-cta,
+.lookup-btn,
+.theme-toggle,
+.luxury-card,
+.v-card,
+.portal-card {
+  border-radius: 100px !important; /* Forces perfect circle/pill shape where applicable */
+}
+
+.luxury-card,
+.v-card,
+.portal-card {
+  border-radius: 40px !important; /* Refined rounded corners for larger containers */
+}
+
+/* Added high-fidelity marquee and timeline animations */
+.trust-marquee {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(197, 160, 89, 0.05);
+  border-top: 1px solid var(--border-subtle);
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-content span {
+  display: inline-block;
+  padding: 0 40px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--primary);
+  opacity: 0.6;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Added comprehensive mobile media queries to ensure the site is fully responsive on all devices */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .footer-grid {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 991px) {
+  .mission-grid,
+  .info-grid,
+  .value-grid,
+  .timeline-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footer-links-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-stats {
+    gap: 32px;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .hero {
+    padding-top: 140px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .footer-links-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bottom-inner {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .portal-card {
+    padding: 40px 24px;
+  }
+
+  .mission {
+    padding: 100px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .brand span {
+    display: none;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .section-tag {
+    letter-spacing: 2px;
+  }
+}
+
+.authority-timeline {
+  padding: 150px 0;
+  background: var(--bg-main);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.timeline-item {
+  padding: 40px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 32px;
+  position: relative;
+  transition: transform 0.6s var(--ease-lux);
+}
+
+.timeline-item:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+}
+
+.t-year {
+  font-family: "Playfair Display", serif;
+  font-size: 0.8rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+/* =====================================================
+   MOBILE CENTER ALIGNMENT FIX (ADD AT END)
+===================================================== */
+
+/* ---- GLOBAL MOBILE SAFETY ---- */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    width: 100%;
+  }
+}
+
+/* -----------------------------------------------------
+   FIX: "The Architecture of Global Trust" (Timeline)
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  .authority-timeline {
+    padding: 100px 0;
+    text-align: center;
+  }
+
+  .timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    justify-items: center;
+  }
+
+  .timeline-item {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .timeline-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.95rem;
+  }
+}
+
+/* -----------------------------------------------------
+   FIX: SECOND PAGE / PROJECT INFO BLOCK CENTERING
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  .project-info {
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .info-item {
+    margin: 0 auto;
+    padding: 32px 24px;
+    border-left: none;
+    border-top: 1px solid var(--primary);
+    max-width: 420px;
+  }
+
+  .info-item h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* -----------------------------------------------------
+   FIX: FOOTER LEFT SHIFT ISSUE (MOBILE)
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footer-brand,
+  .footer-links-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .f-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .f-col a {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* -----------------------------------------------------
+   FIX: HERO STATS CENTERING (MOBILE)
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .stat-item {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* -----------------------------------------------------
+   FIX: NAVBAR SPACING & CENTER SAFETY
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 14px 0;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+}
+
+
+/* =====================================================
+   FORCE COMPACT VERIFICATION LOOKUP (FINAL FIX)
+===================================================== */
+
+/* Overall lookup container tighten */
+.lookup-result {
+  margin-top: 24px !important;
+}
+
+/* Card compact */
+.verification-report {
+  padding: 22px 24px !important;
+  max-width: 520px;
+  margin: 24px auto 0 !important;
+}
+
+/* Header tighten */
+.report-header {
+  margin-bottom: 14px !important;
+  padding-bottom: 12px !important;
+}
+
+/* Badge compact */
+.status-badge {
+  padding: 6px 12px !important;
+  font-size: 0.7rem !important;
+}
+
+/* Grid spacing FIX (MAIN ISSUE) */
+.report-grid {
+  gap: 10px !important;
+  margin-bottom: 14px !important;
+}
+
+/* Remove excess vertical spacing */
+.report-item {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Label & value closer */
+.report-item label {
+  margin-bottom: 2px !important;
+  font-size: 0.6rem !important;
+}
+
+.report-item .value {
+  font-size: 0.9rem !important;
+  line-height: 1.3 !important;
+}
+
+/* Footer compact */
+.report-footer {
+  padding: 10px 12px !important;
+  margin-top: 12px !important;
+  font-size: 0.7rem !important;
+}
+
+/* -----------------------------------------
+   MOBILE – VERY COMPACT VERSION
+------------------------------------------ */
+@media (max-width: 768px) {
+  .verification-report {
+    padding: 16px 14px !important;
+  }
+
+  .report-grid {
+    grid-template-columns: 1fr;
+    gap: 8px !important;
+  }
+
+  .report-item .value {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* =====================================================
+   FIX: VERIFICATION REPORT ROW SPACING (IMAGE ISSUE)
+===================================================== */
+
+/* Reduce vertical distance between rows */
+.report-grid {
+  row-gap: 12px !important;   /* MAIN FIX */
+}
+
+/* Remove any implicit spacing on each item */
+.report-item {
+  min-height: unset !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Keep label compact */
+.report-item label {
+  margin-bottom: 2px !important;
+  line-height: 1.2 !important;
+}
+
+/* Keep value close to label */
+.report-item .value {
+  line-height: 1.3 !important;
+}
+
+/* -----------------------------------------------------
+   MOBILE – EVEN TIGHTER (VERY IMPORTANT)
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  .report-grid {
+    row-gap: 8px !important;
+  }
+}
+/* =====================================================
+   ULTRA COMPACT REGISTRY REPORT (FINAL)
+===================================================== */
+
+/* HARD reduce grid row spacing */
+.report-grid {
+  row-gap: 6px !important;
+  column-gap: 12px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Kill any vertical stretch */
+.report-item {
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Labels: very tight */
+.report-item label {
+  margin-bottom: 1px !important;
+  line-height: 1.1 !important;
+  font-size: 0.55rem !important;
+  letter-spacing: 1px !important;
+}
+
+/* Values: registry-style compact */
+.report-item .value {
+  line-height: 1.15 !important;
+  font-size: 0.85rem !important;
+  margin: 0 !important;
+}
+
+/* Header separation minimal */
+.report-header {
+  margin-bottom: 10px !important;
+  padding-bottom: 8px !important;
+}
+
+/* Footer note closer */
+.report-footer {
+  margin-top: 8px !important;
+  padding: 8px 10px !important;
+  font-size: 0.65rem !important;
+}
+
+/* Status badge even tighter */
+.status-badge {
+  padding: 5px 10px !important;
+  font-size: 0.65rem !important;
+}
+
+/* -----------------------------------------------------
+   MOBILE: MAXIMUM DENSITY
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  .report-grid {
+    row-gap: 5px !important;
+  }
+
+  .report-item .value {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* =====================================================
+   EXTREME COMPACT REGISTRY REPORT (MAX DENSITY)
+===================================================== */
+
+/* Force grid rows ultra-tight */
+.report-grid {
+  row-gap: 2px !important;
+  column-gap: 10px !important;
+  margin-bottom: 6px !important;
+}
+
+/* Remove ALL spacing from items */
+.report-item {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Labels: micro-spacing */
+.report-item label {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0.5rem !important;
+  line-height: 1 !important;
+  letter-spacing: 0.8px !important;
+}
+
+/* Values: ledger style */
+.report-item .value {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0.78rem !important;
+  line-height: 1.05 !important;
+}
+
+/* Header ultra-tight */
+.report-header {
+  margin-bottom: 6px !important;
+  padding-bottom: 4px !important;
+}
+
+/* Status badge micro */
+.status-badge {
+  padding: 4px 8px !important;
+  font-size: 0.6rem !important;
+  line-height: 1 !important;
+}
+
+/* Footer note almost attached */
+.report-footer {
+  margin-top: 4px !important;
+  padding: 6px 8px !important;
+  font-size: 0.6rem !important;
+  line-height: 1.2 !important;
+}
+
+/* Registry seal reduce */
+.report-seal {
+  font-size: 3rem !important;
+}
+
+/* -----------------------------------------------------
+   MOBILE: ABSOLUTE MINIMUM
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  .report-grid {
+    row-gap: 1px !important;
+  }
+
+  .report-item .value {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* =====================================================
+   LUXURY MODALS & INSTITUTIONAL POLICY SYSTEM
+===================================================== */
+.wt-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wt-modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.wt-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+.wt-modal-box {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  width: 100%;
+  padding: 48px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  transform: translateY(20px) scale(0.97);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.wt-modal.active .wt-modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.wt-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.wt-modal-close:hover {
+  color: var(--primary);
+}
+
+.wt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.wt-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.wt-form-group label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.wt-input,
+.wt-textarea,
+.wt-select {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-family: inherit;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.wt-input:focus,
+.wt-textarea:focus,
+.wt-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.wt-policy-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
+}
+
+.wt-tab-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  padding: 8px 16px;
+  border-radius: 100px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.wt-tab-btn.active,
+.wt-tab-btn:hover {
+  background: var(--primary);
+  color: #000;
+  border-color: var(--primary);
+  font-weight: 600;
+}
+
+.wt-policy-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-height: 380px;
+  overflow-y: auto;
+  text-align: left;
+  padding-right: 12px;
+}
+
+.wt-policy-text h4 {
+  color: var(--text-main);
+  margin: 16px 0 8px;
+  font-family: var(--font-serif);
+}
+
+.report-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.btn-report-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-report-primary {
+  background: var(--primary);
+  color: #000;
+}
+
+.btn-report-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--primary-glow);
+}
+
+.btn-report-secondary {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+}
+
+.btn-report-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
