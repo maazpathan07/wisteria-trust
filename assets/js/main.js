@@ -7,7 +7,7 @@
 window.addEventListener("scroll", () => {
   const nav = document.querySelector(".navbar")
   if (!nav) return
-  if (window.scrollY > 40) {
+  if (window.scrollY > 30) {
     nav.classList.add("scrolled")
   } else {
     nav.classList.remove("scrolled")
@@ -167,7 +167,7 @@ function handleInquirySubmit(e) {
     }
     if (btn) {
       btn.disabled = false
-      btn.innerHTML = `<span>Submit Official Inquiry</span> <i data-lucide="send"></i>`
+      btn.innerHTML = `<span>Submit Inquiry</span> <i data-lucide="send"></i>`
     }
     form.reset()
     showToast("Official inquiry submitted to the Sovereign Council", "success")
@@ -184,7 +184,7 @@ function handleInquirySubmit(e) {
 ===================================================== */
 const POLICIES = {
   privacy: {
-    title: "Privacy & Data Sovereignty Protocol",
+    title: "Privacy & Data Protection Protocol",
     content: `
       <h4>1. Sovereignty of Identity Records</h4>
       <p>Wisteria Trust operates an independent accreditation repository. Personal, executive, and corporate identity records submitted during the due diligence lifecycle are encrypted under AES-256 standards and utilized solely to corroborate commercial legitimacy.</p>
@@ -274,7 +274,7 @@ function switchPolicyTab(tabKey) {
 }
 
 /* =====================================================
-   HELPER: SCROLL & CLIPBOARD
+   HELPER: SCROLL, AUTO-FILL & CLIPBOARD
 ===================================================== */
 function scrollToVerifyBox() {
   const box = document.getElementById("verify")
@@ -283,10 +283,18 @@ function scrollToVerifyBox() {
   }
 }
 
+function fillAndVerify(id) {
+  const input = document.getElementById("vid")
+  if (input) {
+    input.value = id
+    verifySeller()
+  }
+}
+
 async function copyLookupLink(link) {
   try {
     await navigator.clipboard.writeText(link)
-    showToast("Official Verification Link copied to clipboard", "success")
+    showToast("Verification Link copied to clipboard", "success")
   } catch (err) {
     console.error("Clipboard copy error:", err)
     showToast("Failed to copy link", "error")
@@ -294,7 +302,7 @@ async function copyLookupLink(link) {
 }
 
 /* =====================================================
-   SOVEREIGN VERIFICATION SEARCH LOOKUP
+   SOVEREIGN VERIFICATION SEARCH LOOKUP WITH TIMEOUT
 ===================================================== */
 async function verifySeller() {
   const input = document.getElementById("vid")
@@ -332,12 +340,17 @@ async function verifySeller() {
 
   if (btn) btn.disabled = true
 
+  // 12-Second Timeout to handle Render free cold start gracefully
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), 12000)
+
   try {
     const apiUrl = window.WT_CONFIG && window.WT_CONFIG.getApiUrl
       ? window.WT_CONFIG.getApiUrl(window.WT_CONFIG.ENDPOINTS.VERIFY_PUBLIC(v))
       : `https://wisteria-backend.onrender.com/api/verify/${encodeURIComponent(v)}`
     
-    const res = await fetch(apiUrl)
+    const res = await fetch(apiUrl, { signal: controller.signal })
+    clearTimeout(timeoutId)
     const data = await res.json()
 
     if (btn) btn.disabled = false
@@ -396,11 +409,11 @@ async function verifySeller() {
 
     out.innerHTML = `
       <div class="verification-report">
-        <div class="report-seal"><i data-lucide="shield-check"></i> SOVEREIGN ACCREDITED</div>
+        <div class="report-seal"><i data-lucide="shield-check"></i> ACCREDITED</div>
         
         <div class="report-header">
           <div class="status-badge verified">
-            <i data-lucide="check-circle-2"></i> Institutional Legitimacy Verified
+            <i data-lucide="check-circle-2"></i> Verified Legitimacy
           </div>
           <div style="text-align: right;">
             <div style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px;">Registry WTID</div>
@@ -429,12 +442,12 @@ async function verifySeller() {
 
         <div class="report-footer">
           <i data-lucide="award" style="width: 20px; height: 20px; color: var(--primary); flex-shrink: 0;"></i>
-          <span>This record is an immutable confirmation of commercial due diligence within the Wisteria Trust global trust ledger.</span>
+          <span>This record is an immutable confirmation of commercial due diligence within the Wisteria Trust global ledger.</span>
         </div>
 
         <div class="report-actions">
           <a href="${sellerProfileUrl}" class="btn-report-action btn-report-primary" target="_blank" rel="noopener noreferrer">
-            <span>View Official Certificate & Badge Embed</span>
+            <span>View Certificate & Badge Embed</span>
             <i data-lucide="external-link"></i>
           </a>
           <button type="button" class="btn-report-action btn-report-secondary" onclick="copyLookupLink('${verificationUrl}')">
@@ -447,13 +460,21 @@ async function verifySeller() {
     if (window.lucide) window.lucide.createIcons()
     scrollToVerifyBox()
   } catch (err) {
+    clearTimeout(timeoutId)
     console.error("Verification error:", err)
     if (btn) btn.disabled = false
+    
     out.innerHTML = `
       <div class="verification-report revoked" style="text-align: center;">
-        <i data-lucide="alert-triangle" style="margin-bottom: 10px; color: #ef4444; width: 26px; height: 26px;"></i>
-        <div style="font-weight: 700;">Registry Connection Error</div>
-        <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Unable to reach verification gateway. Please check connection and retry.</div>
+        <i data-lucide="clock" style="margin-bottom: 10px; color: #f59e0b; width: 28px; height: 28px;"></i>
+        <div style="font-weight: 700; font-size: 1.05rem; margin-bottom: 6px;">Registry Gateway Standby</div>
+        <div style="font-size: 0.88rem; color: var(--text-muted); max-width: 480px; margin: 0 auto 16px; line-height: 1.6;">
+          The sovereign verification database is currently waking up from standby (Render cold start). Please click retry to query again.
+        </div>
+        <button class="btn-report-action btn-report-primary" onclick="verifySeller()" style="margin: 0 auto;">
+          <i data-lucide="rotate-cw"></i>
+          <span>Retry Search</span>
+        </button>
       </div>
     `
     if (window.lucide) window.lucide.createIcons()
