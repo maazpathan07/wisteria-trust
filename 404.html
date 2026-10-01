@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found | Wisteria Trust</title>
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <title>Record Not Found | Wisteria Trust</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
     .notfound-wrapper {
       min-height: 100vh;
@@ -16,64 +19,98 @@
       align-items: center;
       text-align: center;
       padding: 2rem;
-      background: radial-gradient(circle at 50% 30%, rgba(197, 160, 89, 0.08) 0%, #0d0e12 70%);
+      background: radial-gradient(circle at 50% 30%, rgba(197, 160, 89, 0.1) 0%, #090a0d 70%);
       color: #f5f5f7;
+      position: relative;
+      z-index: 1;
+    }
+    .notfound-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--primary);
+      font-weight: 800;
+      padding: 6px 16px;
+      background: rgba(197, 160, 89, 0.1);
+      border: 1px solid var(--border-subtle);
+      border-radius: 9999px;
+      margin-bottom: 24px;
     }
     .notfound-code {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(5rem, 15vw, 9rem);
-      font-weight: 700;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(5.5rem, 15vw, 10rem);
+      font-weight: 800;
       line-height: 1;
-      background: linear-gradient(135deg, #d4af37 0%, #ffffff 50%, #aa820a 100%);
+      background: linear-gradient(135deg, #ecd177 0%, #d4af37 50%, #8e6d2f 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 1rem;
+      letter-spacing: -0.04em;
     }
     .notfound-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
       margin-bottom: 1rem;
-      color: #e5e5e7;
+      color: #ffffff;
+      letter-spacing: -0.01em;
     }
     .notfound-desc {
       font-family: 'Manrope', sans-serif;
-      font-size: 1rem;
-      color: #86868b;
-      max-width: 480px;
+      font-size: 1.05rem;
+      color: #9ba7b7;
+      max-width: 520px;
       margin-bottom: 2.5rem;
-      line-height: 1.6;
+      line-height: 1.7;
     }
     .notfound-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
-      padding: 0.85rem 2rem;
-      background: linear-gradient(135deg, #c5a059 0%, #9e7d3b 100%);
-      color: #0b0c10;
-      font-weight: 700;
+      gap: 10px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #ecd177 0%, #d4af37 50%, #8e6d2f 100%);
+      color: #090a0d;
+      font-weight: 800;
       font-size: 0.95rem;
       border-radius: 9999px;
       text-decoration: none;
-      box-shadow: 0 8px 24px rgba(197, 160, 89, 0.25);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 30px rgba(197, 160, 89, 0.3);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .notfound-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(197, 160, 89, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(197, 160, 89, 0.45);
+    }
+    .notfound-btn svg {
+      width: 18px;
+      height: 18px;
     }
   </style>
 </head>
 <body class="dark-theme">
+  <div class="ambient-mesh"></div>
   <div class="notfound-wrapper">
+    <div class="notfound-badge">
+      <i data-lucide="shield-alert"></i>
+      <span>Registry Exception Protocol</span>
+    </div>
     <div class="notfound-code">404</div>
-    <h1 class="notfound-title">Institutional Record Not Found</h1>
+    <h1 class="notfound-title">Sovereign Record Not Found</h1>
     <p class="notfound-desc">
-      The registry entry or page you requested does not exist or has been relocated within the Wisteria Trust infrastructure.
+      The ledger entry or institutional resource you requested does not exist or has been archived within the Wisteria Trust sovereign infrastructure.
     </p>
-    <a href="/" class="notfound-btn">
+    <a href="index.html" class="notfound-btn">
+      <i data-lucide="arrow-left"></i>
       <span>Return to Official Registry</span>
-      <span>→</span>
     </a>
   </div>
+
+  <script>
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
 </body>
 </html>

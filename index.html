@@ -3,45 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-  <meta name="description" content="Wisteria Trust is the world’s premier independent authority for seller verification, ensuring global business legitimacy and consumer confidence." />
-  <meta name="keywords" content="seller verification, global authority, trust, verification protocol, Wisteria Trust ID" />
+  <meta name="description" content="Wisteria Trust is the premier independent authority in luxury seller verification, architecting sovereign digital authentication infrastructure." />
+  <meta name="keywords" content="seller verification, global authority, sovereign trust, verification protocol, Wisteria Trust ID, luxury accreditation" />
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <title>Wisteria Trust — Global Authority in Premium Seller Verification</title>
+  <title>Wisteria Trust — Global Authority in Sovereign Seller Verification</title>
 
-  <!-- Fonts: Playfair for luxury headings, Manrope for modern body text -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Luxury Typography: Playfair Display for authoritative headings, Manrope for high-clarity typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Animation on Scroll -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Added Lucide icons script -->
+  
+  <!-- Professional Vector Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- CSS -->
+  <!-- Master Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body class="light-theme">
 
+<!-- Ambient Background Glow -->
+<div class="ambient-mesh"></div>
+
+<!-- NAVIGATION BAR -->
 <nav class="navbar">
   <div class="container nav-inner">
-    <div class="brand">
+    <a href="#" class="brand" aria-label="Wisteria Trust Home">
       <div class="logo-mark">W</div>
-      <span>Wisteria Trust</span>
-    </div>
+      <div class="brand-text">
+        <span class="brand-name">Wisteria Trust</span>
+        <span class="brand-sub">Sovereign Authority</span>
+      </div>
+    </a>
 
     <div class="nav-links">
-      <a href="#about">Mission</a>
-      <a href="#process">The Protocol</a>
-      <a href="#verify">Verification Hub</a>
-      <a href="#impact">Institutional Value</a>
-      <!-- Ensured Contact link is present and correctly linked to footer -->
-      <a href="#footer" class="contact-trigger">Contact</a>
+      <a href="#about" class="nav-link">Institutional Mandate</a>
+      <a href="#process" class="nav-link">The Protocol</a>
+      <a href="#verify" class="nav-link">Verification Hub</a>
+      <a href="#impact" class="nav-link">Trust Ecosystem</a>
+      <a href="#footer" class="nav-link contact-trigger">Contact</a>
     </div>
 
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Switch Theme">
-        <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M17.66 6.34l1.42-1.42"/></svg>
-        <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Light/Dark Theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M17.66 6.34l1.42-1.42"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
-      <a href="#verify" class="nav-cta">Portal Access</a>
-      <button class="mobile-menu-toggle" id="menuBtn" aria-label="Toggle Menu">
+      <a href="#verify" class="nav-cta">
+        <span>Verify Record</span>
+        <i data-lucide="arrow-up-right"></i>
+      </a>
+      <button class="mobile-menu-toggle" id="menuBtn" aria-label="Toggle Navigation Menu">
         <span></span>
         <span></span>
         <span></span>
@@ -50,14 +64,20 @@
   </div>
 </nav>
 
+<!-- MOBILE OVERLAY MENU -->
 <div class="mobile-overlay" id="mobileMenu">
   <div class="mobile-menu-content">
-    <a href="#about" class="mobile-link">Mission</a>
-    <a href="#process" class="mobile-link">Protocol</a>
-    <a href="#verify" class="mobile-link">Verification Hub</a>
-    <a href="#impact" class="mobile-link">Value</a>
-    <!-- Added Contact link to mobile menu -->
-    <a href="#footer" class="mobile-link contact-trigger">Contact</a>
+    <a href="#about" class="mobile-link"><i data-lucide="shield"></i> Institutional Mandate</a>
+    <a href="#process" class="mobile-link"><i data-lucide="workflow"></i> The Protocol</a>
+    <a href="#verify" class="mobile-link"><i data-lucide="search"></i> Verification Hub</a>
+    <a href="#impact" class="mobile-link"><i data-lucide="award"></i> Trust Ecosystem</a>
+    <a href="#footer" class="mobile-link contact-trigger"><i data-lucide="mail"></i> Direct Inquiry</a>
+    <div class="mobile-menu-footer">
+      <a href="#verify" class="btn-primary" style="width: 100%; text-align: center; justify-content: center;">
+        <span>Access Registry</span>
+        <i data-lucide="shield-check"></i>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -68,36 +88,64 @@
       <div class="gradient-overlay"></div>
     </div>
     <div class="container hero-content">
-      <span class="hero-label">Global Verification Standard</span>
-      <h1>Institutional Integrity <br><em>Meets Absolute Trust</em></h1>
-      <p>
-                Wisteria Trust is the world's preeminent authority in luxury seller verification. We architect high-fidelity authentication infrastructure for institutions that demand excellence ensuring every transaction upholds the standards of wealth, sophistication, and uncompromised trust.
-
-      </p>
-
-      <div class="hero-actions">
-        <a href="#verify" class="btn-primary">Verify Identity</a>
-        <a href="#process" class="btn-secondary">Explore Protocol</a>
+      <div class="hero-tag-badge" data-aos="fade-down">
+        <i data-lucide="shield-check"></i>
+        <span>Sovereign Verification Standard</span>
       </div>
 
-      <div class="hero-stats">
+      <h1 data-aos="fade-up" data-aos-delay="100">
+        Institutional Integrity <br><em>Meets Absolute Digital Trust</em>
+      </h1>
+
+      <p class="hero-lead" data-aos="fade-up" data-aos-delay="200">
+        Wisteria Trust architects sovereign-grade digital authentication infrastructure for premier commercial enterprises and luxury merchants. We engineer immutable identity standards that eradicate counterparty risk and protect global market confidence.
+      </p>
+
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+        <a href="#verify" class="btn-primary">
+          <span>Verify Merchant Legitimacy</span>
+          <i data-lucide="search"></i>
+        </a>
+        <a href="#process" class="btn-secondary">
+          <span>Explore Protocol</span>
+          <i data-lucide="arrow-down"></i>
+        </a>
+      </div>
+
+      <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
         <div class="stat-item">
-          <span class="stat-num" id="certCounter">1,480+</span>
-          <span class="stat-label">Institutional Status</span>
+          <div class="stat-icon-wrap"><i data-lucide="building-2"></i></div>
+          <div class="stat-info">
+            <span class="stat-num" id="certCounter">1,480+</span>
+            <span class="stat-label">Accredited Enterprises</span>
+          </div>
         </div>
+        <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-num">Global</span>
-          <span class="stat-label">Sovereign Authority</span>
+          <div class="stat-icon-wrap"><i data-lucide="check-circle-2"></i></div>
+          <div class="stat-info">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Forensic Audit Accuracy</span>
+          </div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-icon-wrap"><i data-lucide="globe"></i></div>
+          <div class="stat-info">
+            <span class="stat-num">Global</span>
+            <span class="stat-label">Sovereign Authority</span>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Added a luxury dynamic marquee for real-time institutional activity -->
+
+    <!-- DYNAMIC LUXURY MARQUEE -->
     <div class="trust-marquee">
       <div class="marquee-content">
-        <span>• WISTERIA TRUST: ARCHITECTING GLOBAL LEGITIMACY THROUGH SOVEREIGN VERIFICATION</span>
-        <span>• THE GOLD STANDARD FOR INSTITUTIONAL TRUST IN THE DIGITAL ECONOMY</span>
-        <span>• BRIDGING THE GAP BETWEEN GLOBAL COMMERCE AND ABSOLUTE INTEGRITY</span>
-        <span>• WISTERIA TRUST: ARCHITECTING GLOBAL LEGITIMACY THROUGH SOVEREIGN VERIFICATION</span>
+        <span><i data-lucide="sparkles"></i> WISTERIA TRUST: ARCHITECTING SOVEREIGN LEGITIMACY THROUGH INDEPENDENT FORENSIC VERIFICATION</span>
+        <span><i data-lucide="shield-check"></i> THE GOLD STANDARD FOR INSTITUTIONAL TRUST IN GLOBAL COMMERCE</span>
+        <span><i data-lucide="lock"></i> IMMUTABLE IDENTITY LEDGERS AND DYNAMIC CRYPTOGRAPHIC TRUST SEALS</span>
+        <span><i data-lucide="sparkles"></i> WISTERIA TRUST: ARCHITECTING SOVEREIGN LEGITIMACY THROUGH INDEPENDENT FORENSIC VERIFICATION</span>
       </div>
     </div>
   </section>
@@ -107,35 +155,54 @@
     <div class="container">
       <div class="mission-grid">
         <div class="mission-text" data-aos="fade-up">
-          <span class="section-tag">Institutional Mandate</span>
-          <h2>A Sovereign Layer of Verifiable Truth</h2>
+          <span class="section-tag"><i data-lucide="landmark"></i> Institutional Mandate</span>
+          <h2>A Sovereign Layer of Verifiable Commercial Truth</h2>
           <p>
-            Wisteria Trust establishes a new paradigm in commercial accountability. 
-            By merging deep forensic identity analysis with a decentralized verification 
-            infrastructure, we ensure that every 'Verified' status is a mark of 
-            absolute institutional fidelity.
+            In an era of borderless digital commerce, synthetic credentials and counterparty opacity undermine market confidence. Wisteria Trust operates as an autonomous accreditation benchmark, combining rigorous multi-jurisdictional legal auditing with cryptographic identity standards.
           </p>
+          
           <div class="mission-features">
             <div class="m-feat">
-              <span class="m-num">01</span>
+              <div class="m-icon-box">
+                <i data-lucide="shield-check"></i>
+              </div>
               <div>
-                <h3>Neutral Sovereignty</h3>
-                <p>Operating outside marketplaces to ensure unbiased verification results.</p>
+                <h3>Sovereign Independence</h3>
+                <p>Operating entirely outside marketplace ecosystems to guarantee uncompromised, conflict-free verification audits.</p>
               </div>
             </div>
+
             <div class="m-feat">
-              <span class="m-num">02</span>
+              <div class="m-icon-box">
+                <i data-lucide="file-search"></i>
+              </div>
               <div>
-                <h3>Fidelity First</h3>
-                <p>Every "Verified" status is the result of exhaustive identity cross-referencing.</p>
+                <h3>Forensic Due Diligence</h3>
+                <p>Exhaustive identity cross-referencing against corporate registries, fiscal compliance records, and jurisdictional filings.</p>
+              </div>
+            </div>
+
+            <div class="m-feat">
+              <div class="m-icon-box">
+                <i data-lucide="badge-check"></i>
+              </div>
+              <div>
+                <h3>Tamper-Proof Immutability</h3>
+                <p>Every accredited entity receives a sequential WTID ledger entry and dynamic SVG vector trust seal synchronized in real time.</p>
               </div>
             </div>
           </div>
         </div>
+
         <div class="mission-visual" data-aos="fade-left">
           <div class="luxury-card">
             <div class="card-inner">
               <div class="luxury-visual-placeholder">
+                <div class="visual-shield-icon">
+                  <i data-lucide="shield-check"></i>
+                </div>
+                <div class="visual-brand-title">WISTERIA TRUST</div>
+                <div class="visual-brand-sub">INDEPENDENT VERIFICATION SEAL</div>
                 <div class="shimmer-line"></div>
                 <div class="shimmer-line"></div>
                 <div class="shimmer-line"></div>
@@ -148,42 +215,67 @@
     </div>
   </section>
 
-  <!-- GLOBAL REACH SECTION -->
+  <!-- PROTOCOL TIMELINE -->
   <section id="process" class="project-info">
     <div class="container">
-      <div class="info-grid">
-        <div class="info-item" data-aos="zoom-in">
-          <h3>Sovereign Authority</h3>
-          <p>Wisteria Trust operates as a decentralized authority, providing a gold standard for seller identity that transcends borders and marketplaces. Our protocol ensures that every transaction begins with verified truth.</p>
+      <div class="section-header centered" data-aos="fade-up">
+        <span class="section-tag"><i data-lucide="workflow"></i> Authentication Protocol</span>
+        <h2>The Architecture of Sovereign Verification</h2>
+        <p class="section-subtitle">Our three-tier forensic verification methodology guarantees absolute legitimacy before any credential is published to the public ledger.</p>
+      </div>
+
+      <div class="timeline-grid">
+        <div class="timeline-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="t-badge">Phase 01</div>
+          <div class="t-icon-box"><i data-lucide="search-check"></i></div>
+          <h3>Forensic Registry Audit</h3>
+          <p>Exhaustive cross-referencing of legal incorporation, tax jurisdictions, sovereign registry standing, and operational corporate provenance.</p>
         </div>
-        <div class="info-item" data-aos="zoom-in" data-delay="100">
-          <h3>Elite Due Diligence</h3>
-          <p>Our verification process involves multi-layer cross-referencing of legal entities, financial footprints, and operational history to create a high-fidelity trust score for premium sellers.</p>
+
+        <div class="timeline-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="t-badge">Phase 02</div>
+          <div class="t-icon-box"><i data-lucide="network"></i></div>
+          <h3>Decentralized Consensus</h3>
+          <p>Multi-node compliance scoring ensuring zero single-point-of-failure vulnerabilities in accreditation benchmarks and AML/KYC checks.</p>
+        </div>
+
+        <div class="timeline-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="t-badge">Phase 03</div>
+          <div class="t-icon-box"><i data-lucide="award"></i></div>
+          <h3>Immutable WTID Issuance</h3>
+          <p>Sequential registry issuance of the sovereign Wisteria Trust ID (WTID) and activation of the live dynamic SVG vector trust seal.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VERIFICATION PORTAL -->
+  <!-- VERIFICATION LOOKUP PORTAL -->
   <section id="verify" class="portal">
     <div class="container">
-      <div class="portal-card">
+      <div class="portal-card" data-aos="zoom-in">
         <div class="portal-header">
-          <h2>Verification Registry Lookup</h2>
-          <p>Enter a unique Wisteria Trust ID (WTID) to retrieve the official legitimacy report.</p>
+          <div class="portal-badge"><i data-lucide="shield-check"></i> Public Ledger Access</div>
+          <h2>Official Verification Registry Lookup</h2>
+          <p>Enter an authorized Wisteria Trust Identifier (WTID) to authenticate the official accreditation standing of a sovereign commercial entity.</p>
         </div>
         
         <div class="verify-form">
           <div class="input-group">
-            <label for="vid">Reference WTID</label>
-            <input type="text" id="vid" placeholder="e.g. WT-2025-001" spellcheck="false">
+            <label for="vid"><i data-lucide="hash"></i> Reference WTID</label>
+            <div class="input-wrapper">
+              <i data-lucide="shield" class="input-icon"></i>
+              <input type="text" id="vid" placeholder="e.g., WT-2026-0001" spellcheck="false" autocomplete="off">
+            </div>
           </div>
-          <button class="lookup-btn" onclick="verifySeller()">
+          <button class="lookup-btn" onclick="verifySeller()" id="searchBtn">
             <span>Authorize Search</span>
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
+            <i data-lucide="search"></i>
           </button>
+        </div>
+
+        <div class="search-hint">
+          <i data-lucide="info"></i>
+          <span>Sample reference identifiers for public audit: <code>WT-2026-0001</code></span>
         </div>
 
         <div id="output" class="lookup-result"></div>
@@ -191,108 +283,104 @@
     </div>
   </section>
 
-  <!-- STRATEGIC VALUE SECTION -->
-  <section class="strategic-detail">
-    <div class="container">
-      <div class="detail-content" data-aos="fade-up">
-        <span class="section-tag">Strategic Vision</span>
-        <h2>Elevating Global Commerce</h2>
-        <p>By establishing a unified registry of verified sellers, Wisteria Trust reduces the friction of international trade. We empower institutional buyers and high-net-worth individuals to engage with sellers who have passed the world's most rigorous vetting process.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- VALUE PROPOSITION -->
   <section id="impact" class="value">
     <div class="container">
-      <div class="section-header centered">
-        <span class="section-tag">Trust Ecosystem</span>
-        <h2>Why Verification is Non-Negotiable</h2>
+      <div class="section-header centered" data-aos="fade-up">
+        <span class="section-tag"><i data-lucide="gem"></i> Institutional Advantage</span>
+        <h2>Why Verification is the Core Currency of Global Commerce</h2>
+        <p class="section-subtitle">Empowering high-value commerce with undeniable authenticity, regulatory excellence, and consumer certainty.</p>
       </div>
       
       <div class="value-grid">
-        <div class="v-card">
-          <div class="v-icon">🛡️</div>
-          <h3>Fraud Eradication</h3>
-          <p>Scams rely on shadows. We provide the light of absolute identity transparency.</p>
+        <div class="v-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="v-icon-box">
+            <i data-lucide="shield-alert"></i>
+          </div>
+          <h3>Fraud Eradication Infrastructure</h3>
+          <p>Counterparty fraud relies on digital obscurity. Wisteria Trust delivers absolute identity transparency backed by immutable verification records.</p>
         </div>
-        <div class="v-card">
-          <div class="v-icon">⚖️</div>
-          <h3>Absolute Compliance</h3>
-          <p>Our verification meets the highest global standards for KYC and business vetting.</p>
-        </div>
-        <div class="v-card">
-          <div class="v-icon">💎</div>
-          <h3>Prestige Status</h3>
-          <p>A Wisteria Verified™ mark is an elite signal of business maturity and ethics.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Added a new Strategic Transparency Timeline section for authority building -->
-  <section class="authority-timeline">
-    <div class="container">
-      <div class="section-header centered" data-aos="fade-up">
-        <span class="section-tag">Verification Protocol</span>
-        <h2>The Architecture of Global Trust</h2>
-      </div>
-      <div class="timeline-grid">
-        <div class="timeline-item" data-aos="reveal-left">
-          <div class="t-year">Phase I</div>
-          <h3>Deep Forensic Analysis</h3>
-          <p>Exhaustive identity cross-referencing against global legal and financial databases.</p>
+        <div class="v-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="v-icon-box">
+            <i data-lucide="scale"></i>
+          </div>
+          <h3>Sovereign Regulatory Alignment</h3>
+          <p>Our protocols exceed global standards for commercial KYC, anti-counterfeiting compliance, and cross-border vendor due diligence.</p>
         </div>
-        <div class="timeline-item" data-aos="reveal-right">
-          <div class="t-year">Phase II</div>
-          <h3>Decentralized Consensus</h3>
-          <p>Multi-node verification ensuring no single point of failure in legitimacy claims.</p>
-        </div>
-        <div class="timeline-item" data-aos="reveal-left">
-          <div class="t-year">Phase III</div>
-          <h3>Registry Immutability</h3>
-          <p>Final WTID issuance and inclusion in the high-fidelity sovereign trust hub.</p>
+
+        <div class="v-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="v-icon-box">
+            <i data-lucide="crown"></i>
+          </div>
+          <h3>Institutional Prestige Mark</h3>
+          <p>The Wisteria Verified™ seal signals undeniable operational maturity, high-fidelity corporate ethics, and elite market standing.</p>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- Added id="footer" for the smooth scroll anchor -->
+<!-- FOOTER -->
 <footer id="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand" data-aos="fade-right">
         <div class="brand">
           <div class="logo-mark">W</div>
-          <span>Wisteria Trust</span>
+          <div class="brand-text">
+            <span class="brand-name">Wisteria Trust</span>
+            <span class="brand-sub">Sovereign Authority</span>
+          </div>
         </div>
-        <p class="footer-desc">The global authority in independent seller verification infrastructure. Engineering institutional trust for the next generation of global commerce.</p>
+        <p class="footer-desc">The world's preeminent independent authority in commercial identity authentication and luxury seller accreditation. Engineering institutional trust for the global economy.</p>
+        <div class="footer-status-pill">
+          <span class="pulse-dot"></span>
+          <span>Sovereign Registry Online • 99.99% Uptime</span>
+        </div>
       </div>
       
       <div class="footer-links-container" data-aos="fade-left">
         <div class="f-col">
           <h4>Institutional Portal</h4>
-          <a href="#verify">Verify Seller</a>
-          <a href="#process">Verification Protocol</a>
-          <a href="#impact">Strategic Impact</a>
+          <a href="#verify"><i data-lucide="chevron-right"></i> Verify Merchant</a>
+          <a href="#process"><i data-lucide="chevron-right"></i> Verification Protocol</a>
+          <a href="#about"><i data-lucide="chevron-right"></i> Institutional Mandate</a>
+          <a href="#impact"><i data-lucide="chevron-right"></i> Trust Ecosystem</a>
         </div>
+        
         <div class="f-col">
-          <h4>Legal Framework</h4>
-          <a href="javascript:void(0)" onclick="openPolicyModal('privacy')">Privacy Protocol</a>
-          <a href="javascript:void(0)" onclick="openPolicyModal('terms')">Terms of Authority</a>
-          <a href="javascript:void(0)" onclick="openPolicyModal('compliance')">Global Compliance</a>
+          <h4>Legal & Compliance</h4>
+          <a href="javascript:void(0)" onclick="openPolicyModal('privacy')"><i data-lucide="chevron-right"></i> Privacy Protocol</a>
+          <a href="javascript:void(0)" onclick="openPolicyModal('terms')"><i data-lucide="chevron-right"></i> Terms of Authority</a>
+          <a href="javascript:void(0)" onclick="openPolicyModal('compliance')"><i data-lucide="chevron-right"></i> Global Compliance</a>
+          <a href="javascript:void(0)" onclick="openPolicyModal('security')"><i data-lucide="chevron-right"></i> Security Disclosure</a>
         </div>
+
         <div class="f-col">
-          <h4>Global Connect</h4>
-          <div class="social-links-grid">
-            <a href="https://x.com/trustwisteria?s=11" target="_blank" aria-label="X (Twitter)">X / Twitter</a>
-            <a href="https://www.linkedin.com/company/wisteria-trust/" target="_blank" aria-label="LinkedIn">LinkedIn</a>
-            <a href="https://www.instagram.com/wisteriatrust?igsh=OXE5eGQ0YWV5eTBs&utm_source=qr" target="_blank" aria-label="Instagram">Instagram</a>
-            <a href="https://www.facebook.com/share/14RCYAWwHPH/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">Facebook</a>
-            <a href="https://www.youtube.com/@WisteriaTrust" target="_blank" aria-label="YouTube">YouTube</a>
+          <h4>Global Channels</h4>
+          <div class="social-icons-wrapper">
+            <!-- Official Vector Social Icons -->
+            <a href="https://x.com/trustwisteria?s=11" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="X (formerly Twitter)">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/wisteria-trust/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.87 0-1.58.7-1.58 1.58s.71 1.57 1.58 1.57 1.57-.7 1.57-1.57-.7-1.58-1.57-1.58z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/wisteriatrust?igsh=OXE5eGQ0YWV5eTBs&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/14RCYAWwHPH/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@WisteriaTrust" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
           </div>
-          <button type="button" class="footer-cta" onclick="openInquiryModal()">Direct Inquiry</button>
+          <button type="button" class="footer-cta" onclick="openInquiryModal()">
+            <i data-lucide="mail"></i>
+            <span>Submit Direct Inquiry</span>
+          </button>
         </div>
       </div>
     </div>
@@ -301,8 +389,9 @@
       <div class="bottom-inner">
         <p>© 2025 Wisteria Trust. Independent Seller Verification Authority. All rights reserved.</p>
         <div class="bottom-links">
-          <a href="javascript:void(0)" onclick="openPolicyModal('security')">Security Disclosure</a>
-          <a href="javascript:void(0)" onclick="openPolicyModal('cookies')">Cookie Policy</a>
+          <a href="javascript:void(0)" onclick="openPolicyModal('security')">Security Protocols</a>
+          <span class="sep">•</span>
+          <a href="javascript:void(0)" onclick="openPolicyModal('cookies')">Cookie Governance</a>
         </div>
       </div>
     </div>
@@ -313,39 +402,49 @@
 <div id="inquiryModal" class="wt-modal">
   <div class="wt-modal-overlay" onclick="closeInquiryModal()"></div>
   <div class="wt-modal-box">
-    <button class="wt-modal-close" onclick="closeInquiryModal()">&times;</button>
+    <button class="wt-modal-close" onclick="closeInquiryModal()" aria-label="Close Modal">&times;</button>
+    <div class="modal-header-icon"><i data-lucide="mail"></i></div>
     <span class="section-tag">Direct Institutional Channel</span>
     <h2>Institutional Inquiry</h2>
-    <p style="color: var(--text-muted); font-size: 0.9rem;">Submit a verification inquiry, accreditation application, or enterprise API request.</p>
+    <p class="modal-desc">Submit an accreditation application, enterprise API integration inquiry, or forensic review request.</p>
 
     <form id="inquiryForm" class="wt-form" onsubmit="handleInquirySubmit(event)">
       <div class="wt-form-group">
-        <label for="inqName">Legal Name / Representative</label>
-        <input type="text" id="inqName" class="wt-input" placeholder="e.g. Alexander Vance" required>
+        <label for="inqName">Legal Entity / Authorized Representative</label>
+        <div class="input-wrapper">
+          <i data-lucide="user" class="input-icon"></i>
+          <input type="text" id="inqName" class="wt-input" placeholder="e.g., Alexander Vance" required>
+        </div>
       </div>
       <div class="wt-form-group">
-        <label for="inqEmail">Corporate / Professional Email</label>
-        <input type="email" id="inqEmail" class="wt-input" placeholder="e.g. a.vance@institution.com" required>
+        <label for="inqEmail">Corporate / Institutional Email</label>
+        <div class="input-wrapper">
+          <i data-lucide="mail" class="input-icon"></i>
+          <input type="email" id="inqEmail" class="wt-input" placeholder="e.g., a.vance@institution.com" required>
+        </div>
       </div>
       <div class="wt-form-group">
         <label for="inqType">Inquiry Classification</label>
         <select id="inqType" class="wt-select">
-          <option value="seller">Seller Legitimacy Verification Application</option>
+          <option value="seller">Seller Legitimacy Accreditation Application</option>
           <option value="enterprise">Enterprise Registry API Integration</option>
           <option value="dispute">Integrity Audit & Forensic Review</option>
           <option value="other">General Strategic Inquiry</option>
         </select>
       </div>
       <div class="wt-form-group">
-        <label for="inqMessage">Inquiry Narrative</label>
-        <textarea id="inqMessage" class="wt-textarea" rows="4" placeholder="Detail your organization credentials or request..." required></textarea>
+        <label for="inqMessage">Inquiry Narrative & Credentials</label>
+        <textarea id="inqMessage" class="wt-textarea" rows="4" placeholder="Detail your organization's legal standing, jurisdiction, or specific request..." required></textarea>
       </div>
-      <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">
-        Submit Official Inquiry
+      <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; justify-content: center;">
+        <span>Transmit Official Submission</span>
+        <i data-lucide="send"></i>
       </button>
     </form>
-    <div id="inquiryFeedback" style="display: none; margin-top: 16px; padding: 14px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; color: #10b981; font-size: 0.9rem; text-align: center;">
-      ✅ Inquiry received. Our Sovereign Protocol Committee will review your submission within 24 business hours.
+    
+    <div id="inquiryFeedback" class="inquiry-feedback-box">
+      <i data-lucide="check-circle-2"></i>
+      <span>Inquiry received. The Wisteria Trust Sovereign Accreditation Committee will review your credentials within 24 business hours.</span>
     </div>
   </div>
 </div>
@@ -353,26 +452,36 @@
 <!-- INSTITUTIONAL POLICY & LEGAL MODAL -->
 <div id="policyModal" class="wt-modal">
   <div class="wt-modal-overlay" onclick="closePolicyModal()"></div>
-  <div class="wt-modal-box" style="max-width: 720px;">
-    <button class="wt-modal-close" onclick="closePolicyModal()">&times;</button>
-    <span class="section-tag">Institutional Legal Framework</span>
+  <div class="wt-modal-box modal-wide">
+    <button class="wt-modal-close" onclick="closePolicyModal()" aria-label="Close Modal">&times;</button>
+    <div class="modal-header-icon"><i data-lucide="shield-check"></i></div>
+    <span class="section-tag">Institutional Governance Framework</span>
     <h2 id="policyTitle">Privacy Protocol</h2>
 
     <div class="wt-policy-tabs">
-      <button class="wt-tab-btn active" data-tab="privacy" onclick="switchPolicyTab('privacy')">Privacy</button>
-      <button class="wt-tab-btn" data-tab="terms" onclick="switchPolicyTab('terms')">Terms of Authority</button>
-      <button class="wt-tab-btn" data-tab="compliance" onclick="switchPolicyTab('compliance')">Compliance</button>
-      <button class="wt-tab-btn" data-tab="security" onclick="switchPolicyTab('security')">Security</button>
-      <button class="wt-tab-btn" data-tab="cookies" onclick="switchPolicyTab('cookies')">Cookies</button>
+      <button class="wt-tab-btn active" data-tab="privacy" onclick="switchPolicyTab('privacy')"><i data-lucide="lock"></i> Privacy</button>
+      <button class="wt-tab-btn" data-tab="terms" onclick="switchPolicyTab('terms')"><i data-lucide="file-text"></i> Terms of Authority</button>
+      <button class="wt-tab-btn" data-tab="compliance" onclick="switchPolicyTab('compliance')"><i data-lucide="scale"></i> Compliance</button>
+      <button class="wt-tab-btn" data-tab="security" onclick="switchPolicyTab('security')"><i data-lucide="shield-alert"></i> Security</button>
+      <button class="wt-tab-btn" data-tab="cookies" onclick="switchPolicyTab('cookies')"><i data-lucide="cookie"></i> Cookies</button>
     </div>
 
     <div id="policyContent" class="wt-policy-text"></div>
   </div>
 </div>
 
+<!-- LUXURY TOAST NOTIFICATION CONTAINER -->
+<div id="toastContainer" class="toast-container"></div>
+
+<!-- SCRIPTS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+  // Initialize Lucide Vector Icons
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+</script>
 </body>
 </html>
-

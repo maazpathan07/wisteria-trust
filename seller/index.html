@@ -2,28 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="badge.png">
-    <title>Seller Verification Details | Wisteria Trust</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <title>Sovereign Accreditation Report | Wisteria Trust</title>
     <link rel="stylesheet" href="seller.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="luxury-theme">
     <div class="grain-overlay"></div>
+    <div class="ambient-glow"></div>
     
     <main class="seller-container">
-        <!-- Header -->
+        <!-- Navigation Header -->
         <header class="seller-header">
             <div class="header-content">
                 <a href="../index.html" class="back-home-link">
-                    <i data-lucide="arrow-left"></i> Wisteria Trust Registry
+                    <i data-lucide="arrow-left"></i>
+                    <span>Return to Sovereign Registry</span>
                 </a>
-                <p class="eyebrow">Institutional Verification Protocol</p>
-                <h1 class="premium-heading">Seller <br><span>Verification Report</span></h1>
-                <p class="subtitle">Official authentication record for the registered sovereign entity in the Wisteria Trust global trust ledger.</p>
+                <div class="eyebrow-badge">
+                    <i data-lucide="shield-check"></i>
+                    <span>Official Sovereign Ledger Record</span>
+                </div>
+                <h1 class="premium-heading">Commercial Accreditation <br><span>Verification Report</span></h1>
+                <p class="subtitle">Official authentication record for the verified commercial principal in the Wisteria Trust global trust registry.</p>
             </div>
         </header>
 
@@ -38,44 +43,48 @@
                     <div class="verification-badge" id="badgeShieldContainer">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 2L3 7V12C3 17.5 7 22 12 24C17 22 21 17.5 21 12V7L12 2Z" fill="url(#gold-grad)"/>
-                            <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 12L11 14L15 10" stroke="#090a0d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                             <defs>
                                 <linearGradient id="gold-grad" x1="3" y1="2" x2="21" y2="24" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#c5a059"/>
+                                    <stop stop-color="#ecd177"/>
+                                    <stop offset="0.5" stop-color="#d4af37"/>
                                     <stop offset="1" stop-color="#8e6d2f"/>
                                 </linearGradient>
                             </defs>
                         </svg>
                     </div>
                     <div class="profile-title">
-                        <h2 id="businessName">Loading Business...</h2>
-                        <p id="vid">Verification ID: —</p>
+                        <h2 id="businessName">Retrieving Principal Record...</h2>
+                        <div class="vid-pill">
+                            <i data-lucide="hash"></i>
+                            <span id="vid">Verification ID: —</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="info-grid">
                     <div class="info-item">
-                        <span class="label">Legal Entity</span>
+                        <span class="label"><i data-lucide="building-2"></i> Legal Entity</span>
                         <span class="value" id="sellerName">—</span>
                     </div>
                     <div class="info-item">
-                        <span class="label">Verification Status</span>
+                        <span class="label"><i data-lucide="shield-check"></i> Accreditation Standing</span>
                         <span class="value status-active" id="status">Verifying...</span>
                     </div>
                     <div class="info-item">
-                        <span class="label">Jurisdiction / City</span>
+                        <span class="label"><i data-lucide="map-pin"></i> Jurisdiction / Region</span>
                         <span class="value" id="city">—</span>
                     </div>
                     <div class="info-item">
-                        <span class="label">Validity Period</span>
+                        <span class="label"><i data-lucide="calendar"></i> Validity Period</span>
                         <span class="value" id="validTill">—</span>
                     </div>
                     <div class="info-item">
-                        <span class="label">Registered On</span>
+                        <span class="label"><i data-lucide="clock"></i> Registry Timestamp</span>
                         <span class="value" id="issuedDate">—</span>
                     </div>
                     <div class="info-item">
-                        <span class="label">Official Website</span>
+                        <span class="label"><i data-lucide="globe"></i> Official Domain</span>
                         <span class="value" id="websiteValue">—</span>
                     </div>
                 </div>
@@ -87,38 +96,40 @@
             <div class="asset-grid">
                 <!-- Live Dynamic Trust Seal (SVG) -->
                 <div class="asset-card glass-morphism">
-                    <div class="asset-tag">RECOMMENDED INTEGRATION</div>
+                    <div class="asset-tag"><i data-lucide="sparkles"></i> RECOMMENDED EMBED INTEGRATION</div>
                     <h3>Live Dynamic Trust Seal</h3>
                     <p class="asset-description">
-                        Embed this real-time dynamic SVG seal in your website's header, footer, or checkout. It automatically reflects your real-time verified status directly from Wisteria Trust.
+                        Embed this real-time dynamic vector SVG trust seal in your storefront's navigation, footer, or checkout flow. It automatically reflects your real-time accreditation status directly from the sovereign ledger.
                     </p>
                     
                     <div class="live-badge-preview">
-                        <label class="preview-label">Live Preview</label>
+                        <label class="preview-label"><i data-lucide="eye"></i> Live Dynamic Vector Preview</label>
                         <div class="svg-preview-box">
                             <img id="liveSvgBadgeImg" src="badge.png" alt="Live Trust Badge" class="live-svg-img">
                         </div>
                     </div>
 
                     <div class="action-block">
-                        <label>Dynamic SVG Embed Code (HTML)</label>
-                        <p class="instruction-text">Copy and paste into your website's HTML:</p>
+                        <label><i data-lucide="code"></i> Dynamic SVG Embed Snippet (HTML)</label>
+                        <p class="instruction-text">Copy and paste into your website's template or checkout HTML:</p>
                         <div class="code-box">
-                            <pre id="embedCode">Processing...</pre>
+                            <pre id="embedCode">Generating embed snippet...</pre>
                         </div>
                         <button id="copyCode" class="pill-button secondary">
+                            <i data-lucide="copy"></i>
                             <span>Copy Embed Code</span>
                         </button>
                     </div>
 
                     <div class="action-block">
-                        <label>Public Verification Link</label>
-                        <p class="instruction-text">Direct URL to your official legitimacy certificate:</p>
+                        <label><i data-lucide="link-2"></i> Public Certificate Verification URL</label>
+                        <p class="instruction-text">Direct sovereign registry URL to this official legitimacy report:</p>
                         <div class="code-box">
                             <code id="verifyLink">Generating...</code>
                         </div>
                         <button id="copyLink" class="pill-button secondary">
-                            <span>Copy Verification Link</span>
+                            <i data-lucide="copy"></i>
+                            <span>Copy Public URL</span>
                         </button>
                     </div>
                 </div>
@@ -126,8 +137,9 @@
                 <!-- Static Official Asset Download -->
                 <div class="asset-card glass-morphism dark-accent">
                     <div class="card-pattern"></div>
-                    <h3>Official Vector Badge</h3>
-                    <p class="asset-description">Official digital trust asset for print, social media marketing, and media kits.</p>
+                    <div class="asset-tag"><i data-lucide="award"></i> MEDIA KIT ASSET</div>
+                    <h3>Official Vector Trust Emblem</h3>
+                    <p class="asset-description">High-resolution digital trust emblem for institutional marketing, packaging, and commercial communications.</p>
                     
                     <div class="badge-preview-container">
                         <img src="badge.png" alt="Wisteria Trust Verified Seller Badge" class="badge-preview-img">
@@ -135,22 +147,26 @@
 
                     <div class="action-block">
                         <a href="badge.png" download="wisteria-verified-badge.png" class="pill-button primary shimmer">
-                            <span>Download Badge (PNG)</span>
+                            <i data-lucide="download"></i>
+                            <span>Download Official Asset (PNG)</span>
                         </a>
                     </div>
                     
                     <div class="mandate-section">
-                        <label>Institutional Mandate</label>
+                        <label><i data-lucide="landmark"></i> Institutional Sovereign Covenants</label>
                         <ul class="mandate-list">
-                            <li><span>•</span> Identity Authenticity Forensic Check</li>
-                            <li><span>•</span> Immutable Public Ledger Registry</li>
-                            <li><span>•</span> Continuous Security & Compliance Audit</li>
+                            <li><i data-lucide="check"></i> Forensic Multi-Tiered Corporate Identity Audit</li>
+                            <li><i data-lucide="check"></i> Immutable Public Trust Ledger Placement</li>
+                            <li><i data-lucide="check"></i> Continuous Compliance & Anomaly Monitoring</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="seller-toast-container"></div>
 
     <footer class="luxury-footer">
         <div class="footer-bottom">
