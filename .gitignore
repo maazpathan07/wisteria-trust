@@ -2,10 +2,19 @@
 wisteria-backend/node_modules/
 node_modules/
 
+# Next.js Build
+.next/
+out/
+build/
+dist/
+
 # Environment Variables
 wisteria-backend/.env
 .env
 .env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Logs
 *.log

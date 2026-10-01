@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #faf9f6;
+    --bg-surface: #ffffff;
+    --bg-elevated: #f4f1ea;
+    --primary: #b48a1d;
+    --primary-light: #d4af37;
+    --text-main: #1a1e24;
+    --text-muted: #556272;
+    --border-subtle: rgba(180, 138, 29, 0.16);
+    --primary-glow: rgba(180, 138, 29, 0.18);
+  }
+
+  .dark {
+    --bg-main: #090a0d;
+    --bg-surface: #11141a;
+    --bg-elevated: #181d26;
+    --primary: #d4af37;
+    --primary-light: #ecd177;
+    --text-main: #f5f7fa;
+    --text-muted: #9ba7b7;
+    --border-subtle: rgba(212, 175, 55, 0.18);
+    --primary-glow: rgba(212, 175, 55, 0.22);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-manrope), -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+/* Luxury Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(17, 20, 26, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 89, 0.18);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(180, 138, 29, 0.16);
+}
+
+/* Gold Gradient Text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #ecd177 0%, #d4af37 50%, #8e6d2f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gold Gradient Button */
+.btn-gold {
+  background: linear-gradient(135deg, #ecd177 0%, #d4af37 50%, #8e6d2f 100%);
+  color: #090a0d;
+  font-weight: 800;
+  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(197, 160, 89, 0.4);
+}
+
+/* Ambient Glow Mesh */
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% -10%, rgba(197, 160, 89, 0.08) 0%, transparent 65%),
+              radial-gradient(circle at 100% 80%, rgba(197, 160, 89, 0.04) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+}
