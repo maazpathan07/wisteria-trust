@@ -80,3 +80,28 @@
   pointer-events: none;
   z-index: 0;
 }
+
+/* Print Specific Rules for Certificate */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header, footer, .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .certificate-card {
+    border: 2px solid #b48a1d !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+}
+
