@@ -109,20 +109,11 @@ export default function Logo({ className = "", size = "md", showText = true }: L
 
       {/* Typography */}
       {showText && (
-        <div className="flex flex-col text-left">
-          <div className="flex items-center gap-1.5">
-            <span
-              className={`font-serif font-bold ${titleSizes} tracking-wide text-slate-900 dark:text-slate-100 transition-colors`}
-            >
-              Wisteria <span className="text-gold-500 dark:text-gold-400">Trust</span>
-            </span>
-          </div>
-          <span
-            className={`font-mono ${subSizes} uppercase tracking-[0.22em] text-gold-600 dark:text-gold-400 font-bold -mt-0.5`}
-          >
-            Verification Authority
-          </span>
-        </div>
+        <span
+          className={`font-serif font-bold ${titleSizes} tracking-wide text-slate-900 dark:text-slate-100 transition-colors whitespace-nowrap`}
+        >
+          Wisteria <span className="text-gold-500 dark:text-gold-400">Trust</span>
+        </span>
       )}
     </div>
   );
