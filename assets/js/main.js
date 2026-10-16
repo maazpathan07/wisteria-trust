@@ -19,20 +19,10 @@ const menuBtn = document.getElementById("menuBtn")
 const mobileMenu = document.getElementById("mobileMenu")
 
 if (menuBtn && mobileMenu) {
-  const toggleMenu = () => {
-    menuBtn.classList.toggle("menu-open")
-    mobileMenu.classList.toggle("active")
-    if (mobileMenu.classList.contains("active")) {
-      document.body.style.overflow = "hidden"
-      mobileMenu.style.display = "flex"
-    } else {
-      document.body.style.overflow = "auto"
-      setTimeout(() => {
-        if (!mobileMenu.classList.contains("active")) {
-          mobileMenu.style.display = "none"
-        }
-      }, 350)
-    }
+  const toggleMenu = (e) => {
+    if (e) e.preventDefault()
+    const isOpen = mobileMenu.classList.toggle("active")
+    menuBtn.classList.toggle("menu-open", isOpen)
     if (window.lucide) window.lucide.createIcons()
   }
 
@@ -42,7 +32,6 @@ if (menuBtn && mobileMenu) {
     link.addEventListener("click", () => {
       mobileMenu.classList.remove("active")
       menuBtn.classList.remove("menu-open")
-      document.body.style.overflow = "auto"
     })
   })
 }

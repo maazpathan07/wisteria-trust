@@ -1658,26 +1658,15 @@ footer {
   .brand-name {
     font-size: 0.92rem;
   }
-  .brand-sub {
-    font-size: 0.5rem;
-    letter-spacing: 1.2px;
-  }
   .theme-toggle, .mobile-menu-toggle {
     width: 32px;
     height: 32px;
   }
-}
-
-@media (max-width: 420px) {
-  .brand-sub {
-    display: none;
-  }
-}
   .nav-links, .nav-cta {
-    display: none;
+    display: none !important;
   }
   .mobile-menu-toggle {
-    display: flex;
+    display: flex !important;
   }
   .hero {
     padding: 120px 0 50px;
@@ -1708,23 +1697,28 @@ footer {
   }
 }
 
-/* MOBILE MENU OVERLAY */
+/* MOBILE MENU OVERLAY - Fixed zero layout shift, strictly hidden by default */
 .mobile-overlay {
   position: fixed;
   inset: 0;
   background: var(--bg-main);
-  z-index: 999;
-  display: none;
+  z-index: 1999;
+  display: flex !important;
   flex-direction: column;
   justify-content: center;
   padding: 40px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
 }
 
 .mobile-overlay.active {
   opacity: 1;
-  display: flex;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .mobile-menu-content {
