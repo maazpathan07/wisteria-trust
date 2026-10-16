@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Shield, Lock, Mail, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
+import Logo from "@/components/Logo";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -59,12 +60,10 @@ export default function AdminLoginPage() {
         <div className="glass-panel p-8 sm:p-10 rounded-3xl shadow-2xl border border-gold-500/20 relative">
           
           {/* Header Brand */}
-          <div className="text-center mb-8">
-            <div className="w-16 h-16 rounded-full border border-gold-500/40 bg-obsidian-850 flex items-center justify-center text-gold-400 mx-auto mb-4 shadow-xl shadow-gold-500/15">
-              <Shield className="w-8 h-8" />
-            </div>
-            <h1 className="font-serif text-2xl sm:text-3xl font-bold text-slate-100 mb-1 tracking-tight">
-              Wisteria Trust
+          <div className="flex flex-col items-center justify-center text-center mb-8">
+            <Logo size="lg" showText={false} />
+            <h1 className="font-serif text-2xl sm:text-3xl font-bold text-slate-100 mt-4 mb-1 tracking-tight">
+              Wisteria <span className="text-gold-400">Trust</span>
             </h1>
             <p className="text-xs uppercase tracking-widest text-gold-400 font-bold">
               Administrator Governance Portal

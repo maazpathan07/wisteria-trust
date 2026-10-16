@@ -21,6 +21,7 @@ import {
   Ban,
 } from "lucide-react";
 import { IVerification, VerificationStatus } from "@/lib/types";
+import Logo from "@/components/Logo";
 
 export default function AdminDashboardPage() {
   const router = useRouter();
@@ -204,12 +205,12 @@ export default function AdminDashboardPage() {
       {/* Header Bar */}
       <header className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-8 border-b border-slate-800">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full border border-gold-500/40 bg-obsidian-850 flex items-center justify-center text-gold-400 shadow-xl shadow-gold-500/15">
-            <Shield className="w-6 h-6" />
-          </div>
+          <Logo size="md" showText={false} />
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="font-serif text-2xl font-bold">Wisteria Trust Registry</h1>
+              <h1 className="font-serif text-2xl font-bold">
+                Wisteria <span className="text-gold-400">Trust</span> Registry
+              </h1>
               <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold-500/10 text-gold-400 border border-gold-500/30">
                 Governance
               </span>

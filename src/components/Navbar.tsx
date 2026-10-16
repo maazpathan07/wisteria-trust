@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Menu, X, Sun, Moon, Shield, Workflow, Search, Award, Mail } from "lucide-react";
+import Logo from "./Logo";
 
 interface NavbarProps {
   onOpenInquiry: () => void;
@@ -59,18 +60,8 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
           }`}
         >
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 text-decoration-none group">
-            <div className="w-10 h-10 rounded-full border border-gold-500/40 bg-obsidian-850 flex items-center justify-center text-gold-400 shadow-md shadow-gold-500/10 group-hover:rotate-6 transition-transform">
-              <span className="font-serif text-lg font-extrabold">W</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-base sm:text-lg font-bold text-slate-100 tracking-tight">
-                Wisteria Trust
-              </span>
-              <span className="text-[9px] uppercase tracking-widest text-gold-400 font-bold -mt-0.5">
-                Verification Authority
-              </span>
-            </div>
+          <Link href="/" className="text-decoration-none">
+            <Logo size="md" />
           </Link>
 
           {/* Desktop Navigation Links */}

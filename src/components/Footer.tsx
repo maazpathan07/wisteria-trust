@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Shield, Lock, ShieldCheck, Mail, ExternalLink, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { PolicyTab } from "./PolicyModal";
+import Logo from "./Logo";
 
 interface FooterProps {
   onOpenInquiry: () => void;
@@ -20,18 +21,8 @@ export default function Footer({ onOpenInquiry, onOpenPolicy }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-14 border-b border-gold-500/10">
           {/* Brand Column (Span 2) */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-3 group inline-block">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 flex items-center justify-center shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform duration-300">
-                <Shield className="w-5 h-5 text-obsidian-950 fill-obsidian-950 stroke-[2.5]" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif font-bold text-xl sm:text-2xl text-white tracking-wider flex items-center gap-1.5">
-                  WISTERIA <span className="text-gold-400">TRUST</span>
-                </span>
-                <span className="text-[9px] uppercase tracking-[0.25em] text-gold-400 font-mono">
-                  Sovereign Verification Authority
-                </span>
-              </div>
+            <Link href="/" className="inline-block">
+              <Logo size="lg" />
             </Link>
 
             <p className="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-sm">
