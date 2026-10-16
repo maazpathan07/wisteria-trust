@@ -14,15 +14,35 @@ window.addEventListener("scroll", () => {
   }
 })
 
-// Mobile Menu Toggle
+// Mobile Menu Toggle - Strict hidden on start, instant tactile feedback
 const menuBtn = document.getElementById("menuBtn")
 const mobileMenu = document.getElementById("mobileMenu")
 
 if (menuBtn && mobileMenu) {
+  mobileMenu.style.display = "none"
+  mobileMenu.classList.remove("active")
+  menuBtn.classList.remove("menu-open")
+
   const toggleMenu = (e) => {
-    if (e) e.preventDefault()
-    const isOpen = mobileMenu.classList.toggle("active")
-    menuBtn.classList.toggle("menu-open", isOpen)
+    if (e) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+    const willOpen = !mobileMenu.classList.contains("active")
+    if (willOpen) {
+      mobileMenu.style.display = "flex"
+      void mobileMenu.offsetHeight
+      mobileMenu.classList.add("active")
+      menuBtn.classList.add("menu-open")
+    } else {
+      mobileMenu.classList.remove("active")
+      menuBtn.classList.remove("menu-open")
+      setTimeout(() => {
+        if (!mobileMenu.classList.contains("active")) {
+          mobileMenu.style.display = "none"
+        }
+      }, 250)
+    }
     if (window.lucide) window.lucide.createIcons()
   }
 
@@ -32,6 +52,11 @@ if (menuBtn && mobileMenu) {
     link.addEventListener("click", () => {
       mobileMenu.classList.remove("active")
       menuBtn.classList.remove("menu-open")
+      setTimeout(() => {
+        if (!mobileMenu.classList.contains("active")) {
+          mobileMenu.style.display = "none"
+        }
+      }, 250)
     })
   })
 }
