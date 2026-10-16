@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="wtBgGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#161a22" />
+      <stop offset="50%" stop-color="#0e1117" />
+      <stop offset="100%" stop-color="#060709" />
+    </linearGradient>
+    <linearGradient id="wtGoldBorder" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#faecc1" />
+      <stop offset="35%" stop-color="#d4af37" />
+      <stop offset="70%" stop-color="#8f6c1e" />
+      <stop offset="100%" stop-color="#ecd177" />
+    </linearGradient>
+    <linearGradient id="wtGoldShield" x1="16" y1="10" x2="48" y2="54" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fff8df" />
+      <stop offset="25%" stop-color="#f0d684" />
+      <stop offset="55%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#8a671d" />
+    </linearGradient>
+  </defs>
+
+  <!-- Luxury Obsidian Rounded Squircle Container -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#wtBgGrad)" stroke="url(#wtGoldBorder)" stroke-width="2" />
+
+  <!-- Outer Beveled Sovereign Shield -->
+  <path
+    d="M32 9.5
+       C38.5 14.5 46.5 16 50.5 16.5
+       C50.5 32 42.5 47.5 32 54
+       C21.5 47.5 13.5 32 13.5 16.5
+       C17.5 16 25.5 14.5 32 9.5 Z"
+    fill="url(#wtGoldShield)"
+  />
+
+  <!-- Inner Dark Crest Inlay for High-Definition Contrast -->
+  <path
+    d="M32 13.5
+       C37 17.5 43.5 18.8 46.5 19.2
+       C46.5 31.5 40 44.5 32 50
+       C24 44.5 17.5 31.5 17.5 19.2
+       C20.5 18.8 27 17.5 32 13.5 Z"
+    fill="#0a0c10"
+    stroke="url(#wtGoldBorder)"
+    stroke-width="1.2"
+  />
+
+  <!-- Sovereign Radiant Trust Star -->
+  <path
+    d="M32 17.5 L33.3 21.5 L37.3 22.8 L33.3 24.1 L32 28.1 L30.7 24.1 L26.7 22.8 L30.7 21.5 Z"
+    fill="url(#wtGoldShield)"
+  />
+
+  <!-- Sovereign Stylized Monogram "W" -->
+  <path
+    d="M23 27.5 L26.8 38.5 L32 30.5 L37.2 38.5 L41 27.5"
+    fill="none"
+    stroke="url(#wtGoldShield)"
+    stroke-width="2.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Trust Foundation Base Arc -->
+  <path
+    d="M27.5 43 C29 44.2 35 44.2 36.5 43"
+    fill="none"
+    stroke="url(#wtGoldShield)"
+    stroke-width="1.8"
+    stroke-linecap="round"
+  />
+</svg>
