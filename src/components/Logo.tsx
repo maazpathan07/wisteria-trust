@@ -10,25 +10,25 @@ interface LogoProps {
 
 export default function Logo({ className = "", size = "md", showText = true }: LogoProps) {
   const iconDimensions = {
-    sm: "w-8 h-8",
-    md: "w-10 h-10",
-    lg: "w-14 h-14",
+    sm: "w-7 h-7",
+    md: "w-8 h-8 sm:w-9 sm:h-9",
+    lg: "w-10 h-10 sm:w-12 sm:h-12",
   }[size];
 
   const titleSizes = {
-    sm: "text-sm",
-    md: "text-base sm:text-lg",
-    lg: "text-xl sm:text-2xl",
+    sm: "text-xs sm:text-sm",
+    md: "text-sm sm:text-base",
+    lg: "text-lg sm:text-xl",
   }[size];
 
   const subSizes = {
     sm: "text-[7px]",
-    md: "text-[8.5px]",
-    lg: "text-[10px]",
+    md: "text-[7.5px] sm:text-[8px]",
+    lg: "text-[9px] sm:text-[10px]",
   }[size];
 
   return (
-    <div className={`flex items-center gap-3 group select-none ${className}`}>
+    <div className={`flex items-center gap-2.5 sm:gap-3 group select-none whitespace-nowrap ${className}`}>
       {/* Sovereign Royal Crest Emblem */}
       <div
         className={`${iconDimensions} relative flex-shrink-0 rounded-2xl p-[1.5px] bg-gradient-to-br from-amber-200 via-gold-400 to-amber-700 shadow-lg shadow-gold-500/20 group-hover:scale-105 group-hover:shadow-gold-500/35 transition-all duration-300`}

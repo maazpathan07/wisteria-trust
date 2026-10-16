@@ -51,12 +51,12 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-40 px-4 sm:px-8 py-3 sm:py-4 transition-all duration-300">
+      <header className="fixed top-0 left-0 w-full z-40 px-3 sm:px-6 py-2 sm:py-2.5 transition-all duration-300">
         <nav
-          className={`max-w-7xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border transition-all duration-300 flex items-center justify-between ${
+          className={`max-w-7xl mx-auto px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full border transition-all duration-300 flex items-center justify-between ${
             scrolled
-              ? "bg-obsidian-900/85 backdrop-blur-xl border-gold-500/25 shadow-2xl shadow-black/40"
-              : "bg-obsidian-900/60 backdrop-blur-md border-gold-500/15"
+              ? "bg-obsidian-900/90 backdrop-blur-xl border-gold-500/25 shadow-xl shadow-black/40"
+              : "bg-obsidian-900/70 backdrop-blur-md border-gold-500/15"
           }`}
         >
           {/* Brand Logo */}
