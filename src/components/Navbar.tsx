@@ -132,7 +132,16 @@ export default function Navbar({ onOpenInquiry }: NavbarProps) {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-30 bg-obsidian-950/95 backdrop-blur-2xl flex flex-col justify-center px-8 py-12 md:hidden animate-in fade-in">
+        <div className="fixed inset-0 z-50 bg-obsidian-950/98 backdrop-blur-2xl flex flex-col justify-center px-8 py-12 md:hidden animate-in fade-in duration-200">
+          {/* Explicit Cancel / Close Button */}
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="absolute top-6 right-6 p-2.5 rounded-full bg-obsidian-900 border border-gold-500/30 text-gold-400 hover:text-white hover:bg-gold-500/20 transition-all flex items-center justify-center cursor-pointer shadow-lg active:scale-95"
+            aria-label="Close / Cancel Menu"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
           <div className="flex flex-col gap-6 text-center">
             <Link
               href="#about"

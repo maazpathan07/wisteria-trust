@@ -48,6 +48,23 @@ if (menuBtn && mobileMenu) {
 
   menuBtn.addEventListener("click", toggleMenu)
 
+  const mobileCloseBtn = document.getElementById("mobileCloseBtn")
+  if (mobileCloseBtn) {
+    mobileCloseBtn.addEventListener("click", (e) => {
+      if (e) {
+        e.preventDefault()
+        e.stopPropagation()
+      }
+      mobileMenu.classList.remove("active")
+      menuBtn.classList.remove("menu-open")
+      setTimeout(() => {
+        if (!mobileMenu.classList.contains("active")) {
+          mobileMenu.style.display = "none"
+        }
+      }, 250)
+    })
+  }
+
   document.querySelectorAll(".mobile-link").forEach((link) => {
     link.addEventListener("click", () => {
       mobileMenu.classList.remove("active")
