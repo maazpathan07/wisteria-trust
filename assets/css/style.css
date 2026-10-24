@@ -80,6 +80,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -88,6 +90,7 @@ body {
   color: var(--text-main);
   line-height: 1.7;
   overflow-x: hidden;
+  max-width: 100%;
   position: relative;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
@@ -218,6 +221,15 @@ h3 {
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
+  color: var(--text-main);
+}
+
+a.brand,
+a.brand:visited,
+a.brand:hover,
+a.brand:active {
+  color: var(--text-main);
+  text-decoration: none;
 }
 
 .logo-mark {
@@ -270,9 +282,9 @@ h3 {
 }
 
 .brand-sub {
-  font-size: 0.56rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.5px;
   color: var(--primary);
   font-weight: 800;
   margin-top: 1px;
@@ -317,8 +329,9 @@ h3 {
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  background: var(--primary-gradient);
-  color: #0b0c10;
+  background-color: #d4af37;
+  background-image: var(--primary-gradient);
+  color: #090a0d;
   font-weight: 800;
   font-size: 0.82rem;
   letter-spacing: 0.5px;
@@ -432,6 +445,8 @@ h3 {
   position: relative;
   padding: 150px 0 60px;
   text-align: center;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .hero-content {
@@ -483,8 +498,9 @@ h3 {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  background: var(--primary-gradient);
-  color: #0b0c10;
+  background-color: #d4af37;
+  background-image: var(--primary-gradient);
+  color: #090a0d;
   font-weight: 800;
   font-size: 0.95rem;
   letter-spacing: 0.5px;
@@ -599,6 +615,8 @@ h3 {
 /* MARQUEE */
 .trust-marquee {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   margin-top: 60px;
   padding: 14px 0;
   background: var(--bg-surface);
@@ -606,6 +624,7 @@ h3 {
   border-bottom: 1px solid var(--border-subtle);
   overflow: hidden;
   white-space: nowrap;
+  contain: paint;
 }
 
 .marquee-content {
@@ -755,7 +774,7 @@ h3 {
 }
 
 .visual-brand-sub {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: var(--text-muted);
@@ -962,8 +981,9 @@ h3 {
   align-items: center;
   gap: 10px;
   padding: 15px 28px;
-  background: var(--primary-gradient);
-  color: #0b0c10;
+  background-color: #d4af37;
+  background-image: var(--primary-gradient);
+  color: #090a0d;
   font-weight: 800;
   font-size: 0.95rem;
   border: none;
@@ -972,6 +992,11 @@ h3 {
   transition: all 0.3s var(--ease-lux);
   box-shadow: 0 4px 20px var(--primary-glow);
   white-space: nowrap;
+}
+
+.lookup-btn span {
+  color: #090a0d;
+  font-weight: 800;
 }
 
 .lookup-btn:hover {
@@ -1127,8 +1152,9 @@ h3 {
 }
 
 .btn-report-primary {
-  background: var(--primary-gradient);
-  color: #0b0c10;
+  background-color: #d4af37;
+  background-image: var(--primary-gradient);
+  color: #090a0d;
 }
 
 .btn-report-primary:hover {
@@ -1270,7 +1296,8 @@ footer {
   margin-bottom: 20px;
 }
 
-.f-col a {
+.f-col a,
+.f-col .f-link-btn {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1278,22 +1305,31 @@ footer {
   text-decoration: none;
   font-size: 0.9rem;
   margin-bottom: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  text-align: left;
   transition: all 0.25s ease;
 }
 
-.f-col a svg {
+.f-col a svg,
+.f-col .f-link-btn svg {
   width: 14px;
   height: 14px;
   opacity: 0.5;
   transition: transform 0.25s ease;
 }
 
-.f-col a:hover {
+.f-col a:hover,
+.f-col .f-link-btn:hover {
   color: var(--primary);
   transform: translateX(4px);
 }
 
-.f-col a:hover svg {
+.f-col a:hover svg,
+.f-col .f-link-btn:hover svg {
   opacity: 1;
   transform: translateX(2px);
 }
@@ -1373,13 +1409,21 @@ footer {
   gap: 12px;
 }
 
-.bottom-links a {
+.bottom-links a,
+.bottom-links .bottom-link-btn {
   color: var(--text-muted);
   text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
   transition: color 0.25s ease;
 }
 
-.bottom-links a:hover {
+.bottom-links a:hover,
+.bottom-links .bottom-link-btn:hover {
   color: var(--primary);
 }
 

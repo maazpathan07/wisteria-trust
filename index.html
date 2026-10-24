@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Wisteria Trust is the premier independent authority in seller verification and luxury commercial accreditation." />
   <meta name="keywords" content="seller verification, merchant trust, luxury seller accreditation, trust badge, Wisteria Trust ID, verified commerce" />
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -32,7 +32,7 @@
   <nav class="navbar" id="mainNav">
     <div class="container nav-inner">
       <!-- Brand Logo -->
-      <a href="#" class="brand" aria-label="Wisteria Trust Home">
+      <a href="/" class="brand" aria-label="Wisteria Trust Home">
         <div class="logo-mark">
           <span class="logo-letter">W</span>
         </div>
@@ -362,10 +362,10 @@
         
         <div class="f-col">
           <h4>Legal & Compliance</h4>
-          <a href="javascript:void(0)" onclick="openPolicyModal('privacy')"><i data-lucide="chevron-right"></i> Privacy Protocol</a>
-          <a href="javascript:void(0)" onclick="openPolicyModal('terms')"><i data-lucide="chevron-right"></i> Terms of Authority</a>
-          <a href="javascript:void(0)" onclick="openPolicyModal('compliance')"><i data-lucide="chevron-right"></i> Global Compliance</a>
-          <a href="javascript:void(0)" onclick="openPolicyModal('security')"><i data-lucide="chevron-right"></i> Security Disclosure</a>
+          <button type="button" class="f-link-btn" onclick="openPolicyModal('privacy')"><i data-lucide="chevron-right"></i> Privacy Protocol</button>
+          <button type="button" class="f-link-btn" onclick="openPolicyModal('terms')"><i data-lucide="chevron-right"></i> Terms of Authority</button>
+          <button type="button" class="f-link-btn" onclick="openPolicyModal('compliance')"><i data-lucide="chevron-right"></i> Global Compliance</button>
+          <button type="button" class="f-link-btn" onclick="openPolicyModal('security')"><i data-lucide="chevron-right"></i> Security Disclosure</button>
         </div>
 
         <div class="f-col">
@@ -399,11 +399,11 @@
       <div class="bottom-inner">
         <p>© 2026 Wisteria Trust. Independent Seller Verification Authority. All rights reserved.</p>
         <div class="bottom-links">
-          <a href="javascript:void(0)" onclick="openPolicyModal('security')">Security</a>
+          <button type="button" class="bottom-link-btn" onclick="openPolicyModal('security')">Security</button>
           <span class="sep">•</span>
-          <a href="javascript:void(0)" onclick="openPolicyModal('cookies')">Cookies</a>
+          <button type="button" class="bottom-link-btn" onclick="openPolicyModal('cookies')">Cookies</button>
           <span class="sep">•</span>
-          <a href="javascript:void(0)" onclick="openPolicyModal('privacy')">Privacy</a>
+          <button type="button" class="bottom-link-btn" onclick="openPolicyModal('privacy')">Privacy</button>
         </div>
       </div>
     </div>
@@ -425,14 +425,14 @@
         <label for="inqName">Legal Entity / Representative Name</label>
         <div class="input-wrapper">
           <i data-lucide="user" class="input-icon"></i>
-          <input type="text" id="inqName" class="wt-input" placeholder="e.g., Alexander Vance" required>
+          <input type="text" id="inqName" class="wt-input" placeholder="e.g., Alexander Vance" autocomplete="name" required>
         </div>
       </div>
       <div class="wt-form-group">
         <label for="inqEmail">Corporate Email Address</label>
         <div class="input-wrapper">
           <i data-lucide="mail" class="input-icon"></i>
-          <input type="email" id="inqEmail" class="wt-input" placeholder="e.g., alex@company.com" required>
+          <input type="email" id="inqEmail" class="wt-input" placeholder="e.g., alex@company.com" autocomplete="email" required>
         </div>
       </div>
       <div class="wt-form-group">
